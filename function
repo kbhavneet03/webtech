@@ -1,0 +1,15 @@
+ const arr = []
+function addcount(name) {
+  if (arr[name]) {
+    arr[name]++;
+  } else {
+    arr[name] = 1;
+  }
+}
+addcount("apple");
+addcount("mango");
+addcount("banana");
+addcount("apple");
+addcount("banana");
+console.log(arr);
+
