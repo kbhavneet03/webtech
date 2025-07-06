@@ -1,0 +1,26 @@
+<html>
+<body>
+  <input type="text" id="input" placeholder="enter task" />
+  <button id="btn">Add</button>
+  <ul id="list"></ul>
+  <script>
+    const btn = document.querySelector("#btn");
+    const input = document.querySelector("#input");
+    const list = document.querySelector("#list");
+    btn.addEventListener("click", () => {
+      const value = input.value.trim();
+      if (value) {
+        const task = document.createElement("li");
+        task.innerHTML = `${value}<button class="remove">X</button>`;
+        list.prepend(task);
+        input.value = "";
+      }
+    });
+    list.addEventListener("click", (e) => {
+      if (e.target.classList.contains("remove")) {
+        e.target.parentElement.remove();
+      }
+    });
+  </script>
+</body>
+</html>
