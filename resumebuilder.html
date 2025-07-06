@@ -1,0 +1,28 @@
+<html>
+<body>
+  <h1>Resume Builder</h1>
+  <form id="form">
+    <label>Name: <input type="text" id="name" required></label><br><br>
+    <label>Email: <input type="email" id="email" required></label><br><br>
+    <label>Skills: <input type="text" id="skills"></label><br><br>
+    <button type="button" id="build">Build Resume</button>
+  </form>
+  <hr>
+  <div id="output" style="background: rgb(222, 205, 239); width: 500px; height: 200px;">
+    <h2>Resume Preview</h2>
+    <p id="myname"><b>Name:</b></p>
+    <p id="myemail"><b>Email:</b></p>
+    <p id="myskill"><b>Skills:</b></p>
+  </div>
+  <script>
+    document.getElementById("build").addEventListener("click", function() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let skills = document.getElementById("skills").value;
+      document.getElementById("myname").innerHTML += name;
+      document.getElementById("myemail").innerHTML += email;
+      document.getElementById("myskill").innerHTML += skills;
+    });
+  </script>
+</body>
+</html>
